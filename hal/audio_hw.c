@@ -2036,6 +2036,7 @@ static int out_standby(struct audio_stream *stream)
         amplifier_output_stream_standby((struct audio_stream_out *) stream);
 
         out->standby = true;
+
         if (out->usecase == USECASE_COMPRESS_VOIP_CALL) {
             voice_extn_compress_voip_close_output_stream(stream);
             pthread_mutex_unlock(&adev->lock);
